@@ -6,16 +6,35 @@ const textSchema = new mongoose.Schema(
       type: String,
       required: [true, "A text must have a title"],
       trim: true,
-      maxlength: [20, "A Text name must have less or equal than 20 characters"],
-      minlength: [2, "A Text name must have more or equal than 2 characters"],
+      maxlength: [
+        20,
+        "A Text's title must have less or equal than 20 characters",
+      ],
+      minlength: [
+        2,
+        "A Text's title must have more or equal than 2 characters",
+      ],
       // validate: [validator.isAlpha, 'title name must only contain characters'],
     },
-    text: {
-      type: Number,
-      required: [true, "A Text must have a duration"],
+    textEnglish: {
+      type: String,
+      required: [true, " English Text field is required"],
+      maxlength: [280, "A Text must have less or equal than 280 characters"],
     },
+    textArabic: {
+      type: String,
+      required: [true, "Arabic Text field is required"],
+      maxlength: [280, "A Text must have less or equal than 280 characters"],
+    },
+    textFrench: {
+      type: String,
+      required: [true, "French Text field is required"],
+      maxlength: [280, "A Text must have less or equal than 280 characters"],
+    },
+
     labels: {
       type: [String],
+      defaults: null,
       //   enum: {
       //     values: ["sports", "politics", "others"],
       //     message: "you can add label to your text ",
@@ -23,11 +42,12 @@ const textSchema = new mongoose.Schema(
     },
     summary: {
       type: String,
+      defaults: null,
     },
 
     createdAt: {
       type: Date,
-      default: Date.now(),
+      defaults: Date.now(),
       select: false,
     },
   },
