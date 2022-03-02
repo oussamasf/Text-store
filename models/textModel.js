@@ -14,6 +14,7 @@ const textSchema = new mongoose.Schema(
         2,
         "A Text's title must have more or equal than 2 characters",
       ],
+      unique: [true, "it appears the title is not unique"],
       // validate: [validator.isAlpha, 'title name must only contain characters'],
     },
     textEnglish: {
@@ -40,6 +41,15 @@ const textSchema = new mongoose.Schema(
       //     message: "you can add label to your text ",
       //   },
     },
+    state: {
+      type: String,
+      default: "draft",
+      // required: true,
+      enum: {
+        values: ["draft", "submitted", "approved", "rejected"],
+        message: "state of the text ",
+      },
+    },
     summary: {
       type: String,
       defaults: null,
@@ -47,7 +57,7 @@ const textSchema = new mongoose.Schema(
 
     createdAt: {
       type: Date,
-      defaults: Date.now(),
+      default: Date.now(),
       select: false,
     },
   },
