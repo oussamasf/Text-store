@@ -52,11 +52,17 @@ server.js : index
 # Requirements
 
 > node 16.13.2
+> 
 > dotenv: ^16.0.0,
+> 
 > express: ^4.17.3,
+> 
 > fuse.js: ^6.5.3,
+> 
 > mongoose: ^6.2.3,
+> 
 > morgan: ^1.10.0,
+> 
 > validator: ^13.7.0
 
 # Run
