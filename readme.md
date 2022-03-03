@@ -47,7 +47,7 @@ models : handling the business side \
 routers : define endpoints \
 utils : tools and functions \
 app.js : middlewars \
-server.js : index \
+server.js : index 
 
 # Requirements
 
