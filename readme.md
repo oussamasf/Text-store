@@ -42,12 +42,12 @@ The structure is based on the MVC architecture
 
 ## Files
 
-controlers : handling logic and application side
-models : handling the business side
-routers : define endpoints
-utils : tools and functions
-app.js : middlewars
-server.js : index
+controlers : handling logic and application side \
+models : handling the business side \
+routers : define endpoints \
+utils : tools and functions \
+app.js : middlewars \
+server.js : index \
 
 # Requirements
 
@@ -67,7 +67,7 @@ server.js : index
 
 # Run
 
-    `npm start`
+    npm start
 
 NB : test not implemented and change the variable NODE_ENV for production phase
 
