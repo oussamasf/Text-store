@@ -8,21 +8,24 @@ const textRouter = require("./routers/textRouter");
 const app = express();
 
 // middlewares
-// if (process.env.NODE_ENV === "development") {
-//   app.use(morgan("dev"));
-// }
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
 app.use(express.json());
+
 app.use((req, res, next) => {
   console.log("a request has been emitted ..");
   next();
 });
-app.use((req, res, next) => {
-  req.timee = new Date().toISOString();
-  console.log(req.timee);
-  next();
-});
 
+if (process.env.NODE_ENV === "development") {
+  app.use((req, res, next) => {
+    req.timee = new Date().toISOString();
+    console.log(req.timee);
+    next();
+  });
+}
 // routes mounting
 app.use("/text", textRouter);
 
